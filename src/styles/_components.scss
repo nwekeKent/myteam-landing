@@ -1,0 +1,85 @@
+// buttons
+%btn {
+	width: 153px;
+	min-height: 48px;
+	padding: 0.8rem 1.5rem;
+	transition: all 0.1s ease-out;
+	border-radius: 24px;
+	font-size: 18px;
+	font-weight: 600;
+	outline: 0px;
+	font-family: "Livvic", sans-serif;
+
+	@include flex(center, center, row nowrap);
+
+	&:hover {
+		transform: scale(0.95);
+	}
+}
+
+.btn_outline {
+	@extend %btn;
+
+	color: $col-white;
+	background-color: transparent;
+	border: 2px solid $col-white;
+
+	&:hover {
+		background: $col-white;
+		color: $col-dark-green;
+		border: 0px;
+	}
+
+	&:disabled {
+		opacity: 0.3;
+	}
+}
+
+.btn_outline-dark {
+	@extend %btn;
+
+	color: $col-sec-green;
+	border-color: $col-sec-green;
+	background-color: transparent;
+
+	&:hover {
+		background: $col-sec-green;
+		color: $col-white;
+		border: 0px;
+	}
+
+	&:disabled {
+		opacity: 0.3;
+	}
+}
+
+.btn_solid {
+	@extend %btn;
+	width: 123px;
+	background: $col-white;
+	color: $col-dark-green;
+	border: 0px;
+
+	&:hover {
+		background: $col-sec-blue;
+		color: $col-dark-green;
+		border: 0px;
+	}
+
+	&:disabled {
+		opacity: 0.3;
+	}
+}
+
+%btn_secondary_outline {
+	@extend %btn_secondary;
+
+	color: $col-secondary;
+	border-color: $col-secondary;
+	background-color: transparent;
+}
+
+.section-container {
+	max-width: 1440px;
+	margin: 0 auto;
+}
