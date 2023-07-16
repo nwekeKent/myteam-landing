@@ -1,3 +1,10 @@
+import Navbar from "@/components/layouts/navbar/Navbar";
+import React from "react";
+
 export default function Home() {
-	return <p>Hello</p>;
+	return (
+		<React.Fragment>
+			<Navbar />
+		</React.Fragment>
+	);
 }
