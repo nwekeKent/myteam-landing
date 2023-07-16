@@ -15,7 +15,13 @@ const Navbar = () => {
 			</div>
 
 			<div className="nav__right">
-				<button className="btn_outline">Contact us</button>
+				<div className="nav__hamburger">
+					<SVG src="/assets/icon-hamburger.svg" />
+				</div>
+
+				<div className="nav__cta">
+					<button className="btn_outline">Contact us</button>
+				</div>
 			</div>
 		</nav>
 	);

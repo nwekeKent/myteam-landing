@@ -20,10 +20,19 @@
 		@include flex(flex-start, center, row nowrap);
 
 		.nav__links {
-			@include flex(flex-start, center, row nowrap);
+			display: none;
 			list-style: none;
 			padding: 0;
 			margin-left: 80px;
+
+			@include respondMin("sm-mobile") {
+				margin-left: 48px;
+				@include flex(flex-start, center, row nowrap);
+			}
+
+			@include respondMin("tablet") {
+				margin-left: 80px;
+			}
 		}
 
 		.nav__linkItem {
@@ -42,6 +51,20 @@
 		}
 	}
 
-	.nav__right {
+	.nav__hamburger {
+		display: block;
+		margin-top: -12px;
+
+		@include respondMin("sm-mobile") {
+			display: none;
+		}
+	}
+
+	.nav__cta {
+		display: none;
+
+		@include respondMin("sm-mobile") {
+			display: block;
+		}
 	}
 }
