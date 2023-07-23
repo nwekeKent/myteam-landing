@@ -3,11 +3,14 @@
 import React from "react";
 import SVG from "react-inlinesvg";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ setMobileNavOpen }) => {
 	return (
 		<div className="mobile-nav-overlay">
 			<nav className="mobile__nav">
-				<div className="mobile__nav-close">
+				<div
+					className="mobile__nav-close"
+					onClick={() => setMobileNavOpen(false)}
+				>
 					<SVG src="/assets/icon-close.svg" />
 				</div>
 

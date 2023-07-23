@@ -1,10 +1,11 @@
 "use client";
 
 import MobileNavbar from "@/components/MobileNav";
-import React from "react";
+import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 
 const Navbar = () => {
+	const [mobileNavOpen, setMobileNavOpen] = useState(false);
 	return (
 		<React.Fragment>
 			<nav className="nav">
@@ -17,7 +18,10 @@ const Navbar = () => {
 				</div>
 
 				<div className="nav__right">
-					<div className="nav__hamburger">
+					<div
+						className="nav__hamburger"
+						onClick={() => setMobileNavOpen(true)}
+					>
 						<SVG src="/assets/icon-hamburger.svg" />
 					</div>
 
@@ -26,7 +30,7 @@ const Navbar = () => {
 					</div>
 				</div>
 			</nav>
-			<MobileNavbar />
+			{mobileNavOpen && <MobileNavbar setMobileNavOpen={setMobileNavOpen} />}
 		</React.Fragment>
 	);
 };
