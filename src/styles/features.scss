@@ -1,0 +1,30 @@
+.features {
+	background: $col-sec-green;
+	position: relative;
+
+	&__container {
+		@include flex(flex-start, flex-start, column nowrap);
+		padding: 64px 24px;
+
+		@include respondMin("mobile") {
+			padding: 100px 98px;
+		}
+
+		@include respondMin("tablet") {
+			padding: 140px 10%;
+			@include flex(space-between, flex-start, row nowrap);
+		}
+	}
+
+	&__left {
+	}
+
+	&__content {
+		margin-top: 32px;
+		max-width: 240px;
+
+		@include respondMin("mobile") {
+			max-width: 445px;
+		}
+	}
+}

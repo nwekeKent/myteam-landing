@@ -65,6 +65,21 @@
 }
 
 .section-container {
-	max-width: 1440px;
+	width: 100%;
+	max-width: 1600px;
 	margin: 0 auto;
+}
+
+.text--deco {
+	width: 50px;
+	height: 4px;
+	flex-shrink: 0;
+	background: $col-sec-blue;
+}
+
+.text--deco-coral {
+	width: 50px;
+	height: 4px;
+	flex-shrink: 0;
+	background: $col-primary-coral;
 }

@@ -1,0 +1,87 @@
+.hero {
+	padding: 80px 24px 197px 24px;
+	position: relative;
+
+	@include flex(flex-start, center, column nowrap);
+
+	@include respondMin("mobile") {
+		padding: 122px 40px 256px 40px;
+	}
+
+	@include respondMin("lg-tablet") {
+		padding: 133px 10% 250px 10%;
+		@include flex(space-between, center, row nowrap);
+	}
+
+	@include respondMin("sm-desktop") {
+		padding: 133px 10% 250px 10%;
+		@include flex(space-between, flex-start, row nowrap);
+	}
+
+	.hero__left {
+		min-width: 400px;
+	}
+
+	.hero__right {
+		margin-left: 0px;
+
+		@include respondMin("lg-tablet") {
+			margin-left: 50px;
+		}
+		.deco--line {
+			display: none;
+
+			@include respondMin("lg-tablet") {
+				display: block;
+			}
+		}
+
+		.hero__content {
+			margin-top: 1.8rem;
+
+			@include respondMin("mobile") {
+				margin-top: 2.4rem;
+			}
+
+			@include respondMin("lg-tablet") {
+				margin-top: 7.9rem;
+				max-width: 445px;
+			}
+		}
+	}
+
+	.hero_deco_bottom {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		@include respondMin("mobile") {
+			right: 50%;
+			transform: translate(50%, -50%);
+		}
+
+		@include respondMin("lg-tablet") {
+			left: null;
+			transform: translate(0, 0);
+			right: 10%;
+		}
+	}
+
+	.hero_deco_left {
+		display: none;
+
+		@include respondMin("lg-tablet") {
+			display: block;
+			position: absolute;
+			top: 133px;
+			left: -120px;
+		}
+
+		@include respondMin("sm-destop") {
+			display: block;
+			position: absolute;
+			top: 133px;
+			left: -100px;
+		}
+	}
+}

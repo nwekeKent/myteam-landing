@@ -6,64 +6,72 @@
 
 .hero-heading {
 	color: #fff;
-	font-size: 40px;
+	font-size: 4rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 40px;
+	line-height: 4rem;
 	text-align: center;
+	flex-shrink: 0;
 
 	span {
 		color: $col-primary-coral;
 	}
 
 	@include respondMin("mobile") {
-		font-size: 64px;
-		line-height: 56px;
+		font-size: 6.4rem;
+		line-height: 5.6rem;
 	}
 
-	@include respondMin("tablet") {
-		font-size: 100px;
-		line-height: 100px;
+	@include respondMin("lg-tablet") {
+		font-size: 7.5rem;
+		line-height: 7.5rem;
+		text-align: left;
+	}
+
+	@include respondMin("sm-desktop") {
+		font-size: 10rem;
+		line-height: 10rem;
 		text-align: left;
 	}
 }
 
 .body-heading {
 	color: #fff;
-	font-size: 32px;
+	font-size: 3.2rem;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 32px;
+	line-height: 3.2rem;
 
 	span {
 		color: $col-sec-blue;
 	}
 
 	@include respondMin("tablet") {
-		font-size: 48px;
-		line-height: 48px;
+		font-size: 4.8em;
+		line-height: 4.8rem;
 	}
 }
 
-.hero-paragaph {
+.hero-paragraph {
 	color: #fff;
 	text-align: center;
-	font-size: 15px;
+	font-size: 1.5rem;
 	font-style: normal;
 	font-weight: 600;
 	line-height: 28px;
 
-	@include respondMin("tablet") {
-		font-size: 18px;
+	@include respondMin("lg-tablet") {
+		font-size: 1.8rem;
+		text-align: left;
 	}
 }
 
 .body-text {
 	color: #fff;
-	font-size: 15px;
+	font-size: 1.5rem;
 	font-style: normal;
 	font-weight: 600;
-	line-height: 25px;
+	line-height: 2.5rem;
 }
 
 .text-center {

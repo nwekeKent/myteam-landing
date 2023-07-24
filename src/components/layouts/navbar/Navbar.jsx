@@ -1,6 +1,6 @@
 "use client";
 
-import MobileNavbar from "@/components/MobileNav";
+import MobileNavbar from "@/components/layouts/navbar/MobileNav";
 import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 
