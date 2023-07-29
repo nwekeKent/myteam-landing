@@ -2,6 +2,7 @@
 
 import Features from "@/components/index/Features";
 import Hero from "@/components/index/Hero";
+import Testimonial from "@/components/index/Testimonial";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import React from "react";
 
@@ -11,6 +12,7 @@ export default function Home() {
 			<Navbar />
 			<Hero />
 			<Features />
+			<Testimonial />
 		</React.Fragment>
 	);
 }
