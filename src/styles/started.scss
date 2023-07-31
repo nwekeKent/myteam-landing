@@ -1,0 +1,43 @@
+.started {
+	position: relative;
+	background: $col-primary-coral;
+	min-height: 302px;
+
+	@include respondMin("mobile") {
+		min-height: 200px;
+	}
+
+	&__container {
+		height: 100%;
+		@include flex(center, center, column nowrap);
+
+		padding: 0 24px;
+		@include respondMin("mobile") {
+			padding: 0 98px;
+			@include flex(space-around, center, row nowrap);
+		}
+
+		@include respondMin("tablet") {
+			padding: 0 10%;
+		}
+	}
+
+	&__content {
+		margin-bottom: 24px;
+
+		h1 {
+			color: $col-sec-green;
+		}
+
+		@include respondMin("mobile") {
+			margin-bottom: 0;
+			margin-right: 30px;
+		}
+	}
+
+	.started__deco {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+}
