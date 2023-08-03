@@ -1,21 +1,23 @@
 .hero {
-	padding: 80px 24px 197px 24px;
 	position: relative;
 
-	@include flex(flex-start, center, column nowrap);
+	&-container {
+		padding: 80px 24px 197px 24px;
+		@include flex(flex-start, center, column nowrap);
 
-	@include respondMin("mobile") {
-		padding: 122px 40px 256px 40px;
-	}
+		@include respondMin("mobile") {
+			padding: 122px 40px 256px 40px;
+		}
 
-	@include respondMin("lg-tablet") {
-		padding: 133px 10% 250px 10%;
-		@include flex(space-between, center, row nowrap);
-	}
+		@include respondMin("lg-tablet") {
+			padding: 133px 10% 250px 10%;
+			@include flex(space-between, center, row nowrap);
+		}
 
-	@include respondMin("sm-desktop") {
-		padding: 133px 10% 250px 10%;
-		@include flex(space-between, flex-start, row nowrap);
+		@include respondMin("sm-desktop") {
+			padding: 133px 10% 250px 10%;
+			@include flex(space-between, flex-start, row nowrap);
+		}
 	}
 
 	.hero__left {
@@ -57,11 +59,13 @@
 
 		@include respondMin("mobile") {
 			right: 50%;
+			bottom: -50px;
 			transform: translate(50%, -50%);
 		}
 
 		@include respondMin("lg-tablet") {
 			left: null;
+			bottom: 0;
 			transform: translate(0, 0);
 			right: 10%;
 		}
@@ -74,7 +78,7 @@
 			display: block;
 			position: absolute;
 			top: 133px;
-			left: -120px;
+			left: -100px;
 		}
 
 		@include respondMin("sm-destop") {
