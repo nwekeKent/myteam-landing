@@ -89,3 +89,73 @@
 		}
 	}
 }
+
+/*   ABOUT HERO SYTLES */
+
+.about-hero {
+	position: relative;
+
+	&-container {
+		padding: 80px 24px 108px 24px;
+		@include flex(flex-start, center, column nowrap);
+
+		@include respondMin("mobile") {
+			padding: 122px 40px 112px 40px;
+		}
+
+		@include respondMin("lg-tablet") {
+			padding: 133px 10% 120px 10%;
+			@include flex(space-between, flex-start, row nowrap);
+		}
+
+		// @include respondMin("sm-desktop") {
+		// 	padding: 133px 10% 120 10%;
+		// 	@include flex(space-between, flex-start, row nowrap);
+		// }
+	}
+
+	.hero__left {
+		min-width: 350px;
+	}
+
+	.hero__right {
+		margin-left: 0px;
+
+		@include respondMin("lg-tablet") {
+			margin-left: 30px;
+		}
+		.deco--line {
+			display: none;
+
+			@include respondMin("lg-tablet") {
+				display: block;
+			}
+		}
+
+		.hero__content {
+			margin-top: 1.6rem;
+
+			@include respondMin("mobile") {
+				margin-top: 2.4rem;
+				max-width: 457px;
+			}
+
+			@include respondMin("lg-tablet") {
+				margin-top: 4rem;
+				max-width: 730px;
+			}
+		}
+	}
+
+	.hero_deco_right {
+		position: absolute;
+		bottom: -100px;
+		right: -100px;
+
+		@include respondMin("mobile") {
+			position: absolute;
+			bottom: 0;
+			right: -100px;
+		}
+	}
+}

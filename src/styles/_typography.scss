@@ -35,6 +35,27 @@
 	}
 }
 
+.inner-hero-heading {
+	color: #fff;
+	font-size: 4rem;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 4rem;
+	text-align: center;
+	flex-shrink: 0;
+
+	@include respondMin("mobile") {
+		font-size: 6.4rem;
+		line-height: 5.6rem;
+	}
+
+	@include respondMin("lg-tablet") {
+		font-size: 6.4rem;
+		line-height: 5.6rem;
+		text-align: left;
+	}
+}
+
 .body-heading {
 	color: #fff;
 	font-size: 3.2rem;
