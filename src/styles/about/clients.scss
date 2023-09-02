@@ -1,0 +1,77 @@
+.clients {
+	background: $col-sec-green;
+	position: relative;
+	min-height: 632px;
+
+	@include respondMin("sm-mobile") {
+		min-height: 308px;
+	}
+
+	@include respondMin("lg-tablet") {
+		min-height: 437px;
+	}
+
+	&__container {
+		padding: 88px 24px;
+		@include respondMin("sm-mobile") {
+			padding: 100px 40px;
+		}
+
+		@include respondMin("lg-tablet") {
+			padding: 140px 10%;
+		}
+	}
+
+	&__section {
+		margin-top: 64px;
+		display: flex;
+		@include flex(center, center, column nowrap);
+		gap: 55px;
+
+		@include respondMin("sm-mobile") {
+			margin-top: 52px;
+			@include flex(space-between, center, row nowrap);
+			gap: 20px;
+		}
+
+		@include respondMin("lg-tablet") {
+			margin-top: 70px;
+			gap: 20px;
+		}
+	}
+
+	img {
+		width: auto;
+		max-width: auto;
+		height: 28px;
+
+		@include respondMin("sm-mobile") {
+			width: auto;
+			max-width: 114px;
+			height: 18px;
+		}
+
+		@include respondMin("lg-tablet") {
+			width: auto;
+			max-width: 165px;
+			height: 28px;
+		}
+	}
+
+	&__deco {
+		position: absolute;
+		top: -80px;
+		left: -120px;
+		z-index: 1;
+
+		@include respondMin("sm-mobile") {
+			top: -100px;
+			left: 0px;
+		}
+
+		@include respondMin("lg-tablet") {
+			top: 0;
+			left: 0;
+		}
+	}
+}

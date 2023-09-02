@@ -1,6 +1,7 @@
 .directors {
 	background: $col-jungle-green;
 	position: relative;
+	z-index: 2;
 
 	&__container {
 		padding: 88px 24px;
@@ -34,16 +35,9 @@
 		}
 	}
 
-	&__card {
+	&__details {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		padding-top: 32px;
-		height: 253px;
 		width: 100%;
-		max-width: 327px;
-		background: $col-sec-green;
 
 		.toggle-director {
 			position: absolute;
@@ -52,6 +46,17 @@
 			right: 50%;
 			transform: translateX(50%);
 		}
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 32px;
+		height: 253px;
+		width: 100%;
+		max-width: 327px;
+		background: $col-sec-green;
 
 		@include respondMin("mobile") {
 			max-width: 281px;
@@ -83,6 +88,9 @@
 
 	.flipped-card {
 		background: $col-dark-green;
+		padding-top: 35px;
+		padding-left: 45px;
+		padding-right: 45px;
 
 		p {
 			color: #fff;
@@ -90,6 +98,16 @@
 			font-size: 15px;
 			font-weight: 600;
 			line-height: 25px;
+		}
+
+		@include respondMin("mobile") {
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+
+		@include respondMin("lg-tablet") {
+			padding-left: 45px;
+			padding-right: 45px;
 		}
 	}
 
@@ -99,5 +117,17 @@
 		border-radius: 50%;
 		margin-bottom: 16px;
 		text-align: center;
+	}
+
+	&__deco-bottom {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	&__deco-top {
+		position: absolute;
+		top: 0;
+		left: -100px;
 	}
 }
