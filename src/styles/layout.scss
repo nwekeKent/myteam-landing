@@ -132,6 +132,7 @@
 .footer {
 	position: relative;
 	background-color: $col-dark-green;
+	z-index: 2;
 
 	min-height: 432px;
 	@include flex(flex-start, center, row nowrap);

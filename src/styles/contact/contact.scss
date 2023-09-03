@@ -1,0 +1,98 @@
+.contact {
+	width: 100%;
+	position: relative;
+
+	&__container {
+		padding: 80px 24px;
+		@include flex(flex-start, center, column nowrap);
+		gap: 64px;
+
+		@include respondMin("mobile") {
+			padding: 112px 40px;
+			gap: 56px;
+		}
+
+		@include respondMin("lg-tablet") {
+			padding: 120px 10% 120px 10%;
+			@include flex(space-between, flex-start, row nowrap);
+			gap: 10px;
+		}
+	}
+
+	&__content {
+		margin-top: 16px;
+
+		h4 {
+			color: $col-primary-coral;
+			font-size: 32px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 48px;
+			margin-bottom: 40px;
+			text-align: center;
+
+			@include respondMin("mobile") {
+				margin-bottom: 24px;
+			}
+
+			@include respondMin("lg-tablet") {
+				margin-bottom: 32px;
+				text-align: left;
+			}
+		}
+	}
+
+	.contact-group {
+		margin-bottom: 24px;
+		@include flex(flex-start, center, row nowrap);
+
+		@include respondMin("mobile") {
+			margin-bottom: 8px;
+		}
+
+		.contact-group--svg {
+			flex-shrink: 0;
+		}
+
+		.contact-group--content {
+			margin-left: 23px;
+
+			h3 {
+				color: #fff;
+				font-size: 18px;
+				font-weight: 700;
+				line-height: 28px;
+				width: auto;
+
+				@include respondMin("lg-tablet") {
+					width: 370px;
+				}
+			}
+		}
+	}
+
+	.contact-group:last-of-type {
+		margin-bottom: 0;
+	}
+
+	&__right {
+		width: 100%;
+		@include flex(center, flex-start, row nowrap);
+
+		@include respondMin("lg-tablet") {
+			@include flex(flex-end, flex-start, row nowrap);
+		}
+	}
+
+	&__deco {
+		position: absolute;
+		bottom: -118px;
+		right: -95px;
+		z-index: 1;
+
+		@include respondMin("sm-mobile") {
+			bottom: 0px;
+			right: -100px;
+		}
+	}
+}

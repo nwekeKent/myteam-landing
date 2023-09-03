@@ -6,7 +6,7 @@ import Directors from "@/components/about/Directors";
 import Started from "@/components/index/Started";
 import React from "react";
 
-export default function Home() {
+export default function AboutPage() {
 	return (
 		<React.Fragment>
 			<AboutHero />
