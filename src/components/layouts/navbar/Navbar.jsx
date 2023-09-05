@@ -3,17 +3,42 @@
 import MobileNavbar from "@/components/layouts/navbar/MobileNav";
 import React, { useState } from "react";
 import SVG from "react-inlinesvg";
+import { useRouter, usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
+	const router = useRouter();
+
+	const pathname = usePathname();
+
+	const onActiveLink = (route) => {
+		return pathname === route ? "nav__link--active" : null;
+	};
+
 	return (
 		<React.Fragment>
-			<nav className="nav">
+			<motion.nav
+				className="nav"
+				initial={{ y: -300 }}
+				animate={{ y: 0 }}
+				transition={{ type: "spring", stiffness: 100, duration: 1, delay: 0.5 }}
+			>
 				<div className="nav__left">
-					<SVG src="/assets/logo.svg" />
+					<SVG src="/assets/logo.svg" onClick={() => router.push("/")} />
 					<ul className="nav__links">
-						<li className="nav__linkItem">home</li>
-						<li className="nav__linkItem">about</li>
+						<li
+							className={`nav__linkItem  ${onActiveLink("/")}`}
+							onClick={() => router.push("/")}
+						>
+							home
+						</li>
+						<li
+							className={`nav__linkItem ${onActiveLink("/about")}`}
+							onClick={() => router.push("/about")}
+						>
+							about
+						</li>
 					</ul>
 				</div>
 
@@ -26,10 +51,15 @@ const Navbar = () => {
 					</div>
 
 					<div className="nav__cta">
-						<button className="btn_outline">Contact us</button>
+						<button
+							className="btn_outline"
+							onClick={() => router.push("/contact")}
+						>
+							Contact us
+						</button>
 					</div>
 				</div>
-			</nav>
+			</motion.nav>
 			{mobileNavOpen && <MobileNavbar setMobileNavOpen={setMobileNavOpen} />}
 		</React.Fragment>
 	);

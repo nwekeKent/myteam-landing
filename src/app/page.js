@@ -4,7 +4,7 @@ import Features from "@/components/index/Features";
 import Hero from "@/components/index/Hero";
 import Started from "@/components/index/Started";
 import Testimonial from "@/components/index/Testimonial";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function Home() {
 	return (

@@ -1,3 +1,4 @@
+import React from "react";
 import Footer from "@/components/layouts/Footer";
 import Navbar from "@/components/layouts/navbar/Navbar";
 import "@/styles/index.scss";

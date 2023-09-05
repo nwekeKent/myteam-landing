@@ -37,7 +37,7 @@ const Features = () => {
 				</div>
 
 				<div className="features__right">
-					{data.map(feature => {
+					{data.map((feature) => {
 						return (
 							<div className="feature-group" key={feature.id}>
 								<div className="feature-group--svg">

@@ -10,6 +10,7 @@
 	flex-shrink: 0;
 	outline: 0px;
 	font-family: "Livvic", sans-serif;
+	cursor: pointer;
 
 	@include flex(center, center, row nowrap);
 
