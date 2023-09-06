@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 import { motion, AnimatePresence } from "framer-motion";
+import { RevealContainer } from "@/app/utils/RevealContainer";
 
 const data = [
 	{
@@ -12,6 +13,7 @@ const data = [
 		name: "Nikita Marks",
 		role: "Founder & CEO",
 		quote: `"It always amazes me how much talent there is in every corner of the globe."`,
+		delay: 0.5,
 	},
 	{
 		id: 1,
@@ -19,6 +21,7 @@ const data = [
 		name: "Cristian Duncan",
 		role: "Co-founder & COO",
 		quote: `"Distributed teams required unique processes. You need to approach work in a new way."`,
+		delay: 0.7,
 	},
 	{
 		id: 2,
@@ -26,6 +29,7 @@ const data = [
 		name: "Cruz Hamer",
 		role: "Co-founder & CTO",
 		quote: `"Technology is at the forefront of enabling distributed teams. That's where we come in."`,
+		delay: 0.9,
 	},
 	{
 		id: 3,
@@ -33,6 +37,7 @@ const data = [
 		name: "Drake Heaton",
 		role: "Business Development Lead",
 		quote: `"Hiring similar people from similar backgrounds is a surefire way to stunt innovation."`,
+		delay: 1.1,
 	},
 	{
 		id: 4,
@@ -40,6 +45,7 @@ const data = [
 		name: "Griffin Wise",
 		role: "Lead Marketing",
 		quote: `"Unique perspectives shape unique products, which is what you need to survive these days."`,
+		delay: 1.2,
 	},
 	{
 		id: 5,
@@ -47,6 +53,7 @@ const data = [
 		name: "Aden Allan",
 		role: "Head of Talent",
 		quote: `"Empowered teams create truly amazing products. Set the north star and let them follow it."`,
+		delay: 1.3,
 	},
 ];
 
@@ -68,11 +75,31 @@ const Directors = () => {
 	return (
 		<section className="directors">
 			<div className="section-container directors__container">
-				<h1 className="body-heading text-center">Meet the directors</h1>
+				<RevealContainer
+					transition={{ ease: "linear", duration: 0.5, delay: 1 }}
+					variants={{
+						visible: { opacity: 1, y: 0 },
+						hidden: { opacity: 0, y: 20 },
+					}}
+				>
+					<h1 className="body-heading text-center">Meet the directors</h1>
+				</RevealContainer>
 				<div className="directors__section">
 					{data.map((director, index) => {
 						return (
-							<div className="directors__details" key={director.id}>
+							<RevealContainer
+								className="directors__details"
+								key={director.id}
+								transition={{
+									ease: "easeInOut",
+									duration: 0.8,
+									delay: director.delay,
+								}}
+								variants={{
+									visible: { opacity: 1, y: 0, x: 0 },
+									hidden: { opacity: 0, y: 20, x: 30 },
+								}}
+							>
 								<AnimatePresence mode="wait">
 									{flipped === index ? (
 										<motion.div
@@ -123,19 +150,33 @@ const Directors = () => {
 										}
 									/>
 								</div>
-							</div>
+							</RevealContainer>
 						);
 					})}
 				</div>
 			</div>
 
-			<div className="directors__deco-bottom">
+			<RevealContainer
+				className="directors__deco-bottom"
+				transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
+				variants={{
+					visible: { opacity: 1, x: 0 },
+					hidden: { opacity: 0, x: 100 },
+				}}
+			>
 				<SVG src="/assets/bg-pattern-home-4-about-3.svg" />
-			</div>
+			</RevealContainer>
 
-			<div className="directors__deco-top">
+			<RevealContainer
+				className="directors__deco-top"
+				transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
+				variants={{
+					visible: { opacity: 1, x: 0 },
+					hidden: { opacity: 0, x: -100 },
+				}}
+			>
 				<SVG src="/assets/bg-pattern-about-2-contact-1.svg" />
-			</div>
+			</RevealContainer>
 		</section>
 	);
 };

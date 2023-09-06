@@ -23,7 +23,7 @@ const Hero = () => {
 					<motion.h1
 						animate={controls}
 						initial="hidden"
-						transition={{ ease: "linear", duration: 0.5, delay: 0.5 }}
+						transition={{ ease: "linear", duration: 0.8, delay: 0.5 }}
 						variants={{
 							visible: { opacity: 1, y: 0 },
 							hidden: { opacity: 0, y: 20 },
@@ -92,7 +92,7 @@ const Hero = () => {
 				className="hero_deco_left"
 				animate={controls}
 				initial="hidden"
-				transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+				transition={{ ease: "easeOut", duration: 0.8, delay: 0.5 }}
 				variants={{
 					visible: { x: 0 },
 					hidden: { x: -100 },

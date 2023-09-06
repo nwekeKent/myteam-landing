@@ -2,21 +2,45 @@
 
 import React from "react";
 import SVG from "react-inlinesvg";
+import { RevealContainer } from "@/app/utils/RevealContainer";
 
 const Started = () => {
 	return (
 		<section className="started">
 			<div className="started__container">
 				<div className="started__content">
-					<h1 className="body-heading text-center">Ready to get started?</h1>
+					<RevealContainer
+						transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
+						variants={{
+							visible: { opacity: 1, x: 0 },
+							hidden: { opacity: 0, x: -30 },
+						}}
+					>
+						<h1 className="body-heading text-center">Ready to get started?</h1>
+					</RevealContainer>
 				</div>
 
-				<button className="btn_outline-dark">Contact us</button>
+				<RevealContainer
+					transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
+					variants={{
+						visible: { opacity: 1, x: 0 },
+						hidden: { opacity: 0, x: 30 },
+					}}
+				>
+					<button className="btn_outline-dark">Contact us</button>
+				</RevealContainer>
 			</div>
 
-			<div className="started__deco">
+			<RevealContainer
+				className="started__deco"
+				transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
+				variants={{
+					visible: { opacity: 1, x: 0 },
+					hidden: { opacity: 0, x: -100 },
+				}}
+			>
 				<SVG src="/assets/bg-pattern-home-6-about-5.svg" />
-			</div>
+			</RevealContainer>
 		</section>
 	);
 };
