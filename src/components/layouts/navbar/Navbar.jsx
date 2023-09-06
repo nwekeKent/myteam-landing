@@ -4,7 +4,7 @@ import MobileNavbar from "@/components/layouts/navbar/MobileNav";
 import React, { useState } from "react";
 import SVG from "react-inlinesvg";
 import { useRouter, usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Navbar = () => {
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -20,9 +20,14 @@ const Navbar = () => {
 		<React.Fragment>
 			<motion.nav
 				className="nav"
-				initial={{ y: -300 }}
-				animate={{ y: 0 }}
-				transition={{ type: "spring", stiffness: 100, duration: 1, delay: 0.5 }}
+				initial={{ opacity: 0, y: -50 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					type: "spring",
+					stiffness: 100,
+					duration: 0.5,
+					delay: 0.5,
+				}}
 			>
 				<div className="nav__left">
 					<SVG src="/assets/logo.svg" onClick={() => router.push("/")} />

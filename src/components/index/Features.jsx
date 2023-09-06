@@ -2,6 +2,8 @@
 
 import SVG from "react-inlinesvg";
 import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import { RevealContainer } from "@/app/utils/RevealContainer";
 
 const data = [
 	{
@@ -28,18 +30,43 @@ const Features = () => {
 		<section className="features">
 			<div className="features__container section-container">
 				<div className="features__left">
-					<div className="text--deco-coral"></div>
+					<RevealContainer
+						transition={{ ease: "linear", duration: 0.5, delay: 1.3 }}
+						variants={{
+							visible: { opacity: 1, x: 0 },
+							hidden: { opacity: 0, x: -20 },
+						}}
+					>
+						<div className="text--deco-coral"></div>
+					</RevealContainer>
+
 					<div className="features__content">
-						<h1 className="body-heading">
-							Build & manage distributed teams like no one else.
-						</h1>
+						<RevealContainer
+							transition={{ ease: "easeInOut", duration: 0.8, delay: 0.5 }}
+							variants={{
+								visible: { opacity: 1, y: 0 },
+								hidden: { opacity: 0, y: 20 },
+							}}
+						>
+							<h1 className="body-heading">
+								Build & manage distributed teams like no one else.
+							</h1>
+						</RevealContainer>
 					</div>
 				</div>
 
 				<div className="features__right">
 					{data.map((feature) => {
 						return (
-							<div className="feature-group" key={feature.id}>
+							<RevealContainer
+								key={feature.id}
+								transition={{ ease: "easeInOut", duration: 0.8, delay: 0.5 }}
+								variants={{
+									visible: { opacity: 1, y: 0, x: 0 },
+									hidden: { opacity: 0, y: 20, x: 30 },
+								}}
+								className="feature-group"
+							>
 								<div className="feature-group--svg">
 									<SVG src={`/assets/${feature.svg}.svg`} />
 								</div>
@@ -48,19 +75,34 @@ const Features = () => {
 									<h3 className="text-center--sm">{feature.heading}</h3>
 									<p className="body-text text-center--sm">{feature.para}</p>
 								</div>
-							</div>
+							</RevealContainer>
 						);
 					})}
 				</div>
 			</div>
 
-			<div className="features__deco">
+			<RevealContainer
+				className="features__deco"
+				transition={{ ease: "easeOut", duration: 0.8, delay: 0.8 }}
+				variants={{
+					visible: { opacity: 1, x: 0 },
+					hidden: { opacity: 1, x: 100 },
+				}}
+			>
 				<SVG src="/assets/bg-pattern-home-3.svg" />
-			</div>
+			</RevealContainer>
 
-			<div className="features__deco-bottom">
-				<SVG src="/assets/bg-pattern-home-3.svg" />
-			</div>
+			<RevealContainer
+				transition={{ ease: "easeOut", duration: 1, delay: 0.8 }}
+				variants={{
+					visible: { opacity: 1, x: 0 },
+					hidden: { opacity: 1, x: 100 },
+				}}
+			>
+				<div className="features__deco-bottom">
+					<SVG src="/assets/bg-pattern-home-3.svg" />
+				</div>
+			</RevealContainer>
 		</section>
 	);
 };
