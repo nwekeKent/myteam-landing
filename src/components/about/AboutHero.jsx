@@ -52,7 +52,7 @@ const AboutHero = () => {
 
 			<RevealContainer
 				className="hero_deco_right"
-				transition={{ ease: "easeOut", duration: 0.5, delay: 0.5 }}
+				transition={{ ease: "easeInOut", duration: 0.5, delay: 0.5 }}
 				variants={{
 					visible: { x: 0 },
 					hidden: { x: 100 },
