@@ -2,7 +2,6 @@
 
 import SVG from "react-inlinesvg";
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
 import { RevealContainer } from "@/app/utils/RevealContainer";
 
 const data = [
@@ -56,7 +55,7 @@ const Features = () => {
 				</div>
 
 				<div className="features__right">
-					{data.map((feature) => {
+					{data.map(feature => {
 						return (
 							<RevealContainer
 								key={feature.id}
