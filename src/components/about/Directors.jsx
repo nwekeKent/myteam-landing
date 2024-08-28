@@ -66,11 +66,12 @@ const imageStyle = {
 const Directors = () => {
 	const [flipped, setFlipped] = useState(null);
 
-	const handleToggle = (index) => {
+	const handleToggle = index => {
 		if (index === flipped) {
 			setFlipped(null);
+		} else {
+			setFlipped(index);
 		}
-		setFlipped(index);
 	};
 	return (
 		<section className="directors">

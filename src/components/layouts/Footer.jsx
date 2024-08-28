@@ -13,6 +13,7 @@ const address = [
 const socials = ["icon-facebook.svg", "icon-pinterest.svg", "icon-twitter.svg"];
 
 const Footer = () => {
+	const currentYear = new Date().getFullYear();
 	return (
 		<footer className="footer">
 			<div className="footer__container section-container">
@@ -37,7 +38,7 @@ const Footer = () => {
 						})}
 					</div>
 
-					<p>Copyright 2020. All Rights Reserved</p>
+					<p>Copyright {currentYear}. All Rights Reserved</p>
 				</div>
 			</div>
 		</footer>
