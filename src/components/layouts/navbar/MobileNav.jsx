@@ -17,13 +17,17 @@ const MobileNavbar = ({ setMobileNavOpen }) => {
 
 				<ul className="mobile__nav_links">
 					<li className="mobile__nav_linkItem">
-						<Link href="/">home</Link>
+						<Link href="/" prefetch={true}>
+							home
+						</Link>
 					</li>
 					<li className="mobile__nav_linkItem">
-						<Link href="/about">about</Link>
+						<Link href="/about" prefetch={true}>
+							about
+						</Link>
 					</li>
 
-					<Link href="/contact">
+					<Link href="/contact" prefetch={true}>
 						<button className="btn_outline">Contact us</button>
 					</Link>
 				</ul>
