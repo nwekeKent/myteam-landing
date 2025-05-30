@@ -3,11 +3,9 @@
 import React from "react";
 import SVG from "react-inlinesvg";
 import { RevealContainer } from "@/app/utils/RevealContainer";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Started = () => {
-	const router = useRouter();
-
 	return (
 		<section className="started">
 			<div className="started__container">
@@ -30,12 +28,9 @@ const Started = () => {
 						hidden: { opacity: 0, x: 30 },
 					}}
 				>
-					<button
-						className="btn_outline-dark"
-						onClick={() => router.push("/contact")}
-					>
-						Contact us
-					</button>
+					<Link href="/contact">
+						<button className="btn_outline-dark">Contact us</button>
+					</Link>
 				</RevealContainer>
 			</div>
 

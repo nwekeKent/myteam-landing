@@ -2,10 +2,9 @@
 
 import React from "react";
 import SVG from "react-inlinesvg";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const MobileNavbar = ({ setMobileNavOpen }) => {
-	const router = useRouter();
 	return (
 		<div className="mobile-nav-overlay">
 			<nav className="mobile__nav">
@@ -17,22 +16,16 @@ const MobileNavbar = ({ setMobileNavOpen }) => {
 				</div>
 
 				<ul className="mobile__nav_links">
-					<li className="mobile__nav_linkItem" onClick={() => router.push("/")}>
-						home
+					<li className="mobile__nav_linkItem">
+						<Link href="/">home</Link>
 					</li>
-					<li
-						className="mobile__nav_linkItem"
-						onClick={() => router.push("/about")}
-					>
-						about
+					<li className="mobile__nav_linkItem">
+						<Link href="/about">about</Link>
 					</li>
 
-					<button
-						className="btn_outline"
-						onClick={() => router.push("/contact")}
-					>
-						Contact us
-					</button>
+					<Link href="/contact">
+						<button className="btn_outline">Contact us</button>
+					</Link>
 				</ul>
 			</nav>
 		</div>

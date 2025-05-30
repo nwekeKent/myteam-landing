@@ -3,16 +3,15 @@
 import MobileNavbar from "@/components/layouts/navbar/MobileNav";
 import React, { useState } from "react";
 import SVG from "react-inlinesvg";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Navbar = () => {
 	const [mobileNavOpen, setMobileNavOpen] = useState(false);
-	const router = useRouter();
-
 	const pathname = usePathname();
 
-	const onActiveLink = (route) => {
+	const onActiveLink = route => {
 		return pathname === route ? "nav__link--active" : null;
 	};
 
@@ -30,19 +29,15 @@ const Navbar = () => {
 				}}
 			>
 				<div className="nav__left">
-					<SVG src="/assets/logo.svg" onClick={() => router.push("/")} />
+					<Link href="/">
+						<SVG src="/assets/logo.svg" />
+					</Link>
 					<ul className="nav__links">
-						<li
-							className={`nav__linkItem  ${onActiveLink("/")}`}
-							onClick={() => router.push("/")}
-						>
-							home
+						<li className={`nav__linkItem ${onActiveLink("/")}`}>
+							<Link href="/">home</Link>
 						</li>
-						<li
-							className={`nav__linkItem ${onActiveLink("/about")}`}
-							onClick={() => router.push("/about")}
-						>
-							about
+						<li className={`nav__linkItem ${onActiveLink("/about")}`}>
+							<Link href="/about">about</Link>
 						</li>
 					</ul>
 				</div>
@@ -56,12 +51,9 @@ const Navbar = () => {
 					</div>
 
 					<div className="nav__cta">
-						<button
-							className="btn_outline"
-							onClick={() => router.push("/contact")}
-						>
-							Contact us
-						</button>
+						<Link href="/contact">
+							<button className="btn_outline">Contact us</button>
+						</Link>
 					</div>
 				</div>
 			</motion.nav>
